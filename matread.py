@@ -1,5 +1,5 @@
 # This script parses a material database
-
+# and compiles the data in a dictionary
 import re 
 
 file = open('matlib.std')
@@ -8,7 +8,7 @@ file = open('matlib.std')
 
 def first_parse(line):
     data = line.split()
-    return(data)
+    return data
 
 def data_par(line):   
     material_dat = {}
@@ -17,15 +17,15 @@ def data_par(line):
         data = first_parse(line)  
         if len(data[0]) > 2:
             alloy = data[0]
-            density = data[1]
+            #density = data[1]
             num_of_elements = data[2]
             comp_dat = {}
-        else:
+        elif:
             element = data[0]
             mass_frac = data[1]
             atomic_number = data[2]
             comp_dat[element]={'Atomic Number':atomic_number,'Mass Fraction':mass_frac}
-        material_dat[alloy]={'Density':density,'Number of Elements':num_of_elements,'Composition Data':comp_dat}
+        material_dat[alloy]={'Number of Elements':num_of_elements,'Composition Data':comp_dat}
         return(material_dat)
 
 
