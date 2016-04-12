@@ -23,11 +23,5 @@ def data_parse(file):
             A = data[0]
             abund = data[1]
             iso_dict[A] = {'Abundance':abund}
-        element_data[ele_name] = {'Molar Mass':mm,'Atomic Number':atomic_number,'Density':density,'Number of Isotopes':num_isotopes,'Isotope Data':iso_dict}  
+        element_data[ele_name] = {'Molar Mass':mm,'Atomic Number':atomic_number,'Density':density,'Number of Isotopes':num_isotopes,'Isotope Data':iso_dict}
     return element_data
-  
-
-
-
-        
-  
