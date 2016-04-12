@@ -11,7 +11,8 @@ def first_parse(line):
     return(data)
 
 def data_par(line):   
-    material_dat = {} 
+    material_dat = {}
+    comp_dat = {} 
     for line in file:
         data = first_parse(line)  
         if len(data[0]) > 2:
@@ -25,5 +26,6 @@ def data_par(line):
             atomic_number = data[2]
             comp_dat[element]={'Atomic Number':atomic_number,'Mass Fraction':mass_frac}
         material_dat[alloy]={'Density':density,'Number of Elements':num_of_elements,'Composition Data':comp_dat}
+        return(material_dat)
 
 
