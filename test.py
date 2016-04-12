@@ -1,18 +1,18 @@
 # These tests verify the material parser script performance
-from matread import data_par
+from eleread import data_parse
 from nose.tools import assert_equal
 from nose.tools import assert_raises
 
-def density():
-    file = open('matlib.std')
-    data = data_par(file)
-    exp = 1.00
-    obs = data['water']['Density']
+def density_test():
+    file = open('elelib.std')
+    data = data_parse(file)
+    exp = str('0.899000E-04')
+    obs = data['h']['Density']
     assert_equal(obs,exp)
 
-def massfrac():
-    file = open('matlib.std')
-    data = data_par(file)
-    exp = str('0.73000e+00')
-    obs = data['WALLOY']['Composition Data']['Fe']['Mass Fraction']
+def isotope_abundance_test():
+    file = open('elelib.std')
+    data = data_parse(file)
+    exp = str('0.789900E+02')
+    obs = data['mg']['Isotope Data']['24']['Abundance']
     assert_equal(obs,exp)
